@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title> Flipper </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { background-color: Red; 
+            color: white; 
+            font.style {font: normal, 25pt Times New Roman;}
+        }
+        h1{
+            text-align: center;
+            margin-top: 200px;
+        }
+        button{
+            text-align: center;
+            margin-left: 600px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Click to flip the color!</h1>
+    <br>
+    <script>
+        const newButton = document.createElement('button')
+        newButton.textContent = "Flip!";
+        document.body.appendChild(newButton);
+
+        newButton.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'blue';
+        })
+    </script>
+</body>
+</html>
