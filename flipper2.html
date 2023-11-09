@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title> Flipper </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { background-color: Red; 
+            color: white; 
+            font.style {font: normal, 25pt Times New Roman;}
+        }
+        h1{
+            text-align: center;
+            margin-top: 200px;
+        }
+        button{
+            text-align: center;
+            margin-left: 600px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue
+        }
+        #hexCodeDisplay{
+            text-align: right;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click to flip the color!</h1>
+    <br>
+    <div id="hexCodeDisplay"></div>
+    <script>
+        function randomColor() {
+            var hexCode = '#';
+            var hexCodeValues = '0123456789ABCDEF';
+            for (var i=0; i<6; i++) {
+                hexCode += hexCodeValues[Math.floor(Math.random() * 16)];
+            }
+            return hexCode;
+        }
+
+       const newButton = document.createElement('button')
+        newButton.textContent = "Flip!";
+        document.body.appendChild(newButton);
+
+        const hexCodeDisplay = document.getElementById('hexCodeDisplay');
+        const h1Element = document.getElementsByTagName('h1')[0];
+        document.body.insertBefore(hexCodeDisplay, h1Element);
+
+        newButton.addEventListener('click', function() {
+            var hexCode = randomColor();
+            document.body.style.backgroundColor = hexCode;
+            hexCodeDisplay.textContent = hexCode;
+        });
+
+    </script>
+</body>
+</html>
